@@ -1,4 +1,5 @@
 public class Examen {
+    
     private String nombre;
     private int nota;
 
