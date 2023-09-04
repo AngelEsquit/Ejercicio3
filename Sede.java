@@ -19,8 +19,13 @@ public class Sede {
         this.estudiantes.add(estudiante);
     }
 
-    public ArrayList<Estudiante> getEstudiantes() {
-        return estudiantes;
+    public void getEstudiantes() {
+        int n = 0;
+
+        for (Estudiante estudiante : this.estudiantes) {
+            System.out.println(n + ": " + estudiante.getNombre());
+            n += 1;
+        }
     }
 
     public float getPromedio(String tipoExamen) {
