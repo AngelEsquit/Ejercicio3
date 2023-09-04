@@ -46,8 +46,9 @@ public class Sede {
         if (conteo == 0) {
             prom = -1;
         }
-
-        prom = total/conteo;
+        else {
+            prom = total/conteo;
+        }
 
         return prom;
     }
@@ -82,42 +83,50 @@ public class Sede {
     }
 
     public int getModa(String tipoExamen) {
-        ArrayList<Integer> notas = new ArrayList<>();
-        
-        for (Estudiante estudiante: this.estudiantes) {
-            if (estudiante.getNotas(tipoExamen) != -1) {
-                notas.add(estudiante.getNotas(tipoExamen));
+        int moda = -1;
+        try {
+            ArrayList<Integer> notas = new ArrayList<>();
+            
+            for (Estudiante estudiante: this.estudiantes) {
+                if (estudiante.getNotas(tipoExamen) != -1) {
+                    notas.add(estudiante.getNotas(tipoExamen));
+                }
             }
-        }
-
-        int[] notasArray = new int[notas.size()];
-        for (int i = 0; i < notas.size(); i++) {
-            notasArray[i] = notas.get(i);
-        }
-
-        Arrays.sort(notasArray);
-
-        int moda = notasArray[0];
-        int frecuenciaMax = 1;
-        int frecuenciaActual = 1;
-
-        for (int i = 1; i < notasArray.length; i++) {
-            if (notasArray[i] == notasArray[i - 1]) {
-                frecuenciaActual++;
-            } else {
-                frecuenciaActual = 1;
+            
+            int[] notasArray = new int[notas.size()];
+            for (int i = 0; i < notas.size(); i++) {
+                notasArray[i] = notas.get(i);
             }
 
-            if (frecuenciaActual > frecuenciaMax) {
-                frecuenciaMax = frecuenciaActual;
-                moda = notasArray[i];
+            Arrays.sort(notasArray);
+
+            moda = notasArray[0];
+            int frecuenciaMax = 1;
+            int frecuenciaActual = 1;
+
+            for (int i = 1; i < notasArray.length; i++) {
+                if (notasArray[i] == notasArray[i - 1]) {
+                    frecuenciaActual++;
+                } else {
+                    frecuenciaActual = 1;
+                }
+
+                if (frecuenciaActual > frecuenciaMax) {
+                    frecuenciaMax = frecuenciaActual;
+                    moda = notasArray[i];
+                }
             }
+
+            int conteo = notas.size();
+
+            if (conteo == 0) {
+                moda = -1;
+            }
+
+            return moda;
         }
-
-        int conteo = notas.size();
-
-        if (conteo == 0) {
-            moda = -1;
+        catch (Exception e){
+            System.out.println("No hay datos");
         }
 
         return moda;
