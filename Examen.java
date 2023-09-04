@@ -18,4 +18,9 @@ public class Examen {
     public int getNota() {
         return nota;
     }
+
+    public Examen(String nombre, int nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
 }
