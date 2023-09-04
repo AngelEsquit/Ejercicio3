@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Universidad {
     public static void main(String[] args) {
+        //Configuración de sedes
         Scanner scanner = new Scanner(System.in);
         ArrayList<Estudiante> estudiantes1 = new ArrayList<Estudiante>();
         ArrayList<Estudiante> estudiantes2 = new ArrayList<Estudiante>();
@@ -11,6 +12,7 @@ public class Universidad {
         Sede sede2 = new Sede("Central", estudiantes2);
         Sede sede3 = new Sede("Occidente", estudiantes3);
 
+        //Configuración de exámenes
         ArrayList<String> examenes = new ArrayList<String>();
         examenes.add("Matemática");
         examenes.add("Lenguaje");
@@ -19,6 +21,7 @@ public class Universidad {
         examenes.add("Comprensión Lectora");
         examenes.add("Estadística");
 
+        //Variables para guardar datos del estudiante
         String nombre;
         String apellido;
         int codigoUnico;
@@ -33,12 +36,12 @@ public class Universidad {
 
         boolean go = true;
 
-        while (go == true) {
-            printMenu();
+        while (go == true) { // Ciclo del programa principal
+            printMenu(); // Menú principal
             int opcion = scanner.nextInt();
             scanner.nextLine();
 
-            if (opcion == 1) {
+            if (opcion == 1) { // Opción para agregar un estudiante con sus exámenes
                 examenesObj.clear();
 
                 printMensaje("Ingrese el nombre");
@@ -106,7 +109,7 @@ public class Universidad {
                 }
             }
             
-            else if (opcion == 2) {
+            else if (opcion == 2) { // Opción para mostrar la lista de estudiantes de cada sede
                 printMensaje("Ingrese la sede \n 1: Altiplano \n 2: Central \n 3: Occidente");
                 sede = scanner.nextInt();
                 scanner.nextLine();
@@ -123,7 +126,7 @@ public class Universidad {
                 }
             }
 
-            else if (opcion == 3) {
+            else if (opcion == 3) { // Opción de estadísticas
                 System.out.println("");
                 System.out.println("");
                 System.out.println("Sede Altiplano - Promedio");
@@ -269,7 +272,7 @@ public class Universidad {
                 }
             }
 
-            else if (opcion == 4) {
+            else if (opcion == 4) { // Opción para salir
                 go = false;
             }
         }
