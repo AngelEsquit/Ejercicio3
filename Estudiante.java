@@ -64,4 +64,12 @@ public class Estudiante {
 
         return nota;
     }
+
+    public Estudiante(String nombre, String apellido, int codigoUnico, String fecha, String email){
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.codigoUnico = codigoUnico;
+        this.fecha = fecha;
+        this.email = email;
+    }
 }
