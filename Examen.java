@@ -23,4 +23,6 @@ public class Examen {
         this.nombre = nombre;
         this.nota = nota;
     }
+
+    
 }
