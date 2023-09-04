@@ -15,8 +15,8 @@ public class Sede {
         return nombre;
     }
 
-    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
+    public void setEstudiantes(Estudiante estudiante) {
+        this.estudiantes.add(estudiante);
     }
 
     public ArrayList<Estudiante> getEstudiantes() {
