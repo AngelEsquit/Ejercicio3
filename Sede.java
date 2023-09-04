@@ -22,6 +22,7 @@ public class Sede {
     public void getEstudiantes() {
         int n = 0;
 
+        System.out.println("");
         for (Estudiante estudiante : this.estudiantes) {
             System.out.println(n + ": " + estudiante.getNombre());
             n += 1;
@@ -201,5 +202,10 @@ public class Sede {
         }
 
         return min;
+    }
+
+    public Sede(String nombre, ArrayList<Estudiante> estudiantes) {
+        this.nombre = nombre;
+        this.estudiantes = estudiantes;
     }
 }
